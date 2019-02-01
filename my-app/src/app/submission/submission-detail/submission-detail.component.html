@@ -1,0 +1,70 @@
+<div>
+  <div class="card mb-3" *ngIf="submission">
+    <table class="table">
+      <thead>
+      <tr>
+        <th colspan="2">Информация доклада</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Название доклада</td>
+        <td>{{this.submission.title}}</td>
+      </tr>
+      <tr>
+        <td>Автор</td>
+        <td>{{this.submission.author.firstname}} {{this.submission.author.lastname}}</td>
+      </tr>
+      <tr>
+        <td>Статус</td>
+        <td>{{this.submissionStatusService.getStatus(this.submission.status)}}</td>
+      </tr>
+      <tr>
+        <td>Рецензенты</td>
+        <td>
+          <button class="btn btn-light" [routerLink]="['/submissions/', this.submission.id,'reviewers']">Посмотреть
+            список
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="text-center mb-3">
+      <h5 class="text-center">Документы</h5>
+      <ul class="list-group" *ngFor="let document of this.submission.documents">
+        <div class="row w-50 m-auto">
+          <div class="col-8">
+            <li class="list-group-item text-center clickable" [routerLink]="['/documents/', document.id]" style="width: 500px">
+              {{document.filename}}
+            </li>
+          </div>
+          <div class="col-4">
+            <button type="button" class="close mt-2"
+                    *ngIf="canDeleteDocument(document)"
+                    (click)="deleteDocument(document.id)">&times;
+            </button>
+          </div>
+        </div>
+      </ul>
+    </div>
+    <div class="text-center" *ngIf="canSendOnReview()">
+      <button class="btn btn-sm btn-info" (click)="sendOnReview()">Запросить рецензию</button>
+    </div>
+  </div>
+  <button type="button" class="btn btn-info" (click)="goBack()">Назад</button>
+
+  <!---->
+  <div class="text-center " *ngIf="canUploadNewFile()">
+    <div class="custom-file w-50">
+      <label class="custom-file-label">{{currentFileUpload?.name}}
+      </label>
+      <input class="custom-file-input" type="file" (change)="onFileChange($event)" #fileInput>
+      <div>
+        <button type="button" (click)="uploadFile()" class="btn btn-primary">Загрузить документ</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+

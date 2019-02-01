@@ -1,0 +1,16 @@
+<div>
+  <app-navigation></app-navigation>
+
+  <app-side *ngIf="this.authService.isLoggedIn()"></app-side>
+  <div class="page-content-wrapper" [class.page-content-wrapper-with-side]="this.authService.isLoggedIn()">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div id="modal-container" class="hidden"></div>
+<div id="overlay" (click)="removeModal()" class="hidden"></div>

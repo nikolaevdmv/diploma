@@ -1,0 +1,85 @@
+<!--<div class="wrapper">-->
+  <!--<h4>Запросы</h4>-->
+  <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+    <!--&lt;!&ndash;<label for="select">Выберите тип запросов</label>&ndash;&gt;-->
+    <!--&lt;!&ndash;<select class="form-control w-25" id="select" [formControl]="type">&ndash;&gt;-->
+      <!--&lt;!&ndash;<option *ngFor="let type of this.requestType" [ngValue]="type">{{type}}</option>&ndash;&gt;-->
+    <!--&lt;!&ndash;</select>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+  <!--<div>-->
+    <!--<div *ngIf="this.selectedList?.length > 0">-->
+      <!--<h5 class="text-center"> {{type.value}}</h5>-->
+      <!--<table class="table table-bordered table-hover request-table">-->
+        <!--<thead>-->
+        <!--<tr>-->
+          <!--<th class="id-col">#</th>-->
+          <!--<th class="author-col">Авторы</th>-->
+          <!--<th class="title-col">Название</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody *ngFor="let request of this.selectedList">-->
+        <!--<tr class="clickable" [routerLink]="[request.id]">-->
+          <!--<td>{{this.selectedList.indexOf(request) + 1}}</td>-->
+          <!--<td class="text-center">{{request.organizer}}</td>-->
+          <!--<td class="text-center">{{request.title}}</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+      <!--</table>-->
+    <!--</div>-->
+  <!--</div>-->
+
+<!--</div>-->
+
+
+<div class="text-center container">
+  <h4 class="text-center">Заявки</h4>
+
+
+  <div class="btn-group float-right">
+    <button
+      class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fa fa-cog"></i>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right p-0" style="width:300px" (click)="$event.stopPropagation()">
+      <div class="row">
+        <div class="col-12">
+          <div class="card ">
+            <div class="card-body">
+              <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+
+                <div class="row">
+                  <div class="col-12">
+
+                    <h5 class="card-title">Статус заявки</h5>
+                    <div class="form-group">
+                      <div class="form-check" *ngFor="let reqType of requestType">
+                        <input class="form-check-input" name="type" [value]="reqType" type="radio" id="{{reqType}}"
+                               formControlName="type">
+                        <label class="form-check-label" for="{{reqType}}">{{reqType}}</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-sm btn-success">Применить</button>
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <app-request-list-table [page]="page" (onPageChange)="pageChange($event)"></app-request-list-table>
+  </div>
+</div>

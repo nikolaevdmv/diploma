@@ -1,0 +1,40 @@
+<div  *ngIf="conference">
+  <div class="card mb-3">
+  <!--<div class="" *ngIf="conference">-->
+    <table class="table ">
+      <thead>
+      <tr>
+        <th colspan="2">Информация конференции</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Акроним конференции</td>
+        <td>{{this.conference.acronym}}</td>
+      </tr>
+      <tr>
+        <td>Название конференции</td>
+        <td>{{this.conference.title}}</td>
+      </tr>
+      <tr>
+        <td>Веб сайт</td>
+        <td>{{this.conference.webPage}}</td>
+      </tr>
+      <tr>
+        <td>Организатор</td>
+        <td>{{this.conference.organizer.username}}</td>
+      </tr>
+      <tr>
+        <td>Страна</td>
+        <td>{{this.conference.country}}</td>
+      </tr>
+      <tr>
+        <td>Город</td>
+        <td>{{this.conference.city}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<button type="button" class="btn btn-info" (click)="goBack()">Назад</button>
+

@@ -1,0 +1,35 @@
+<div *ngIf="this.document">
+
+  <div class="card mb-3 w-50 ml-auto mr-auto">
+    <table class="table">
+      <thead>
+      <tr class="text-center">
+        <th colspan="2">Информация документа</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Название доклада</td>
+        <td>{{this.document.filename}}</td>
+      </tr>
+      <tr>
+        <td>Статус</td>
+        <td>{{submissionStatusService.getStatus(this.document.status)}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-info btn-sm" (click)="downloadFile()">Скачать файл</button>
+
+  </div>
+  <button type="button" class="btn btn-info" (click)="goBack()">Назад</button>
+
+  <div *ngIf="canMakeNewReview()">
+    <app-new-review (onSubmit)="onReviewCreater($event)"></app-new-review>
+  </div>
+  <div *ngIf="canSeeReviews()">
+    <h5 class="text-center">Рецензии</h5>
+    <div *ngFor="let review of document.reviews">
+      <app-review-detail  [reviewId]="review.id" (onDelete)="onReviewDeleted($event)"></app-review-detail>
+    </div>
+  </div>
+</div>

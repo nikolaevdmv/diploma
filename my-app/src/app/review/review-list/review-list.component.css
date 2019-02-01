@@ -1,0 +1,24 @@
+table th {
+  text-align: center;
+}
+.id-col {
+  width: 1%;
+}
+
+.author-col {
+  width: 35%;
+}
+
+.title-col {
+  width: 74%;
+}
+table {
+  width: 80%;
+  margin: 20px auto;
+}
+.wrapper {
+  margin: 10px;
+}
+.clickable {
+  cursor: pointer;
+}

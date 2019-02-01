@@ -1,0 +1,56 @@
+<form *ngIf="this.review" [formGroup]="form">
+  <div class="card bg-light mb-3 ml-auto mr-auto" style="max-width: 30rem;">
+
+    <div class="form-group">
+      <div class="card-header"
+           [class.bg-success]="this.reviewStatusService.getStatus(this.review.status) == 'Принять'"
+           [class.bg-danger]="this.reviewStatusService.getStatus(this.review.status) == 'Отклонить'"
+           [class.bg-light]="this.reviewStatusService.getStatus(this.review.status) !== 'Отклонить' &&
+                             this.reviewStatusService.getStatus(this.review.status) !== 'Принять'"
+
+      >
+        <!--{{this.reviewStatusService.getStatus(this.review.status)}}-->
+        <div class="row">
+          <div class="col-8">
+            <select class="form-control " id="status" formControlName="status">
+              <option *ngFor="let status of reviewStatusService.getDicplayableStatuses()"
+                      [value]="reviewStatusService.getStatusNumber(status)">{{status}}
+              </option>
+            </select>
+          </div>
+          <div class="col-4">
+            <button type="button" class="close mt-2"
+                    *ngIf="canDeleteReview()"
+                    (click)="deleteReview()">&times;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <textarea class="form-control" id="content" formControlName="evaluation"></textarea>
+        <p class="card-text float-right">
+          <small class="text-muted">{{this.review.author.firstname}} {{this.review.author.lastname}}<br>
+            {{this.review.date
+            | date: 'MMM d, HH:mm'}}
+          </small>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="card-footer text-muted" *ngIf="showButtons()">
+      <div class="float-left">
+        <button class="btn btn-success btn-sm" (click)="submitReview()">Отправить</button>
+      </div>
+      <div class="float-right">
+        <button class="btn btn-info btn-sm" (click)="changeReview()">Редактировать</button>
+        <button class="btn btn-success btn-sm" (click)="saveReview()">Сохранить</button>
+      </div>
+    </div>
+
+  </div>
+</form>

@@ -1,0 +1,25 @@
+<div class="m-2 p-2">
+  <p>
+    Добро пожаловать, Иванов Иван.
+  </p>
+  <hr>
+  <div>
+    Ваша текущая роль:
+    <div class="form-group" style="display: inline-block">
+      <label for="role" class="sr-only">Роль</label>
+      <select class="form-control" [class.test]="!visible" id="role" [disabled]="!visible">
+        <option value="1">Организатор</option>
+        <option value="2">Ревьювер</option>
+        <option value="3">Участник</option>
+      </select>
+    </div>
+    <!-- Только если доступные другие роли-->
+    <button *ngIf="visible" type="button" class="btn btn-primary ml-2" (click)="changeRole()">Сохранить</button>
+    <button *ngIf="!visible" type="button" class="btn btn-primaryf ml-2" (click)="visible = true">Сменить роль</button>
+  </div>
+  <hr>
+  <ul class="list-unstyled ">
+    <li><a href="">Конференции, в которых я участвую.</a></li>
+    <li><a href="">Мои доклады.</a></li>
+  </ul>
+</div>

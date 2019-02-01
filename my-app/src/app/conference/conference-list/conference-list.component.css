@@ -1,0 +1,27 @@
+.example-container {
+
+}
+
+.mat-table {
+  overflow: auto;
+  /*max-height: 500px;*/
+  min-height: 300px;
+  width: 1200px;
+  margin: auto;
+}
+.mat-paginator {
+  margin: auto;
+  width: 1000px;
+}
+.highlight:hover {
+  cursor: pointer;
+  background: lightblue; /* green */
+
+}
+
+.conference-table {
+  margin: auto;
+}
+.dropdown-toggle:after{
+  display: none;
+}

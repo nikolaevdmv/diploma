@@ -1,0 +1,13 @@
+<h3 class="text-center">Список всех ревью</h3>
+<div *ngIf="reviews?.length > 0" class="p-2">
+  <div class=" p-2 w-75 m-auto">
+    <h5 class="">Список ревью</h5>
+    <div class="">
+      <div class="list-group" *ngFor="let review of reviews">
+        <a class="list-group-item list-group-item-action" [routerLink]="[review.id]">
+          Review #{{reviews.indexOf(review) + 1}}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

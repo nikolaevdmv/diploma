@@ -1,0 +1,56 @@
+<!--<form class="p-5 border w-75 mx-auto col-6" style="background-color: #e6e6e6" [formGroup]="form" novalidate (ngSubmit)="submit(form.value)">-->
+  <!--<div class="form-group">-->
+    <!--<label for="username">E-mail</label>-->
+    <!--<input type="text" class="form-control " id="username" autocomplete="off" formControlName="username">-->
+    <!--<div class="invalid-feedback">Test</div>-->
+  <!--</div>-->
+  <!--<div class="form-group">-->
+    <!--<label for="password">Пароль</label>-->
+    <!--<input type="password" class="form-control" id="password" formControlName="password">-->
+  <!--</div>-->
+  <!--<div class="text-center">-->
+    <!--<button type="submit" class="btn btn-primary" [disabled]="!form.valid">Войти</button>-->
+  <!--</div>-->
+<!--</form>-->
+
+<!--<div class="signin-form">-->
+  <!--<form [formGroup]="form" (ngSubmit)="submit(form.value)">-->
+    <!--<div class="example-container">-->
+      <!--<mat-form-field>-->
+        <!--<input matInput placeholder="E-mail" formControlName="username" type="text">-->
+      <!--</mat-form-field>-->
+      <!--<mat-form-field>-->
+        <!--<input matInput placeholder="Пароль" formControlName="password" type="password">-->
+      <!--</mat-form-field>-->
+    <!--</div>-->
+    <!--<div class="my-btn">-->
+      <!--<button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Войти</button>-->
+    <!--</div>-->
+  <!--</form>-->
+<!--</div>-->
+<div class="card card-outline-secondary">
+  <div class="card-header">
+    <h3 class="mb-0">Авторизация</h3>
+  </div>
+  <div class="card-body">
+    <form class="form" role="form" autocomplete="off" id="loginForm" [formGroup]="form" novalidate (ngSubmit)="submit(form.value)">
+      <div class="form-group">
+        <label for="uname1">Username</label>
+        <input type="text" class="form-control" name="uname1" id="uname1" formControlName="username">
+        <div class="invalid-feedback">Please enter your username or email</div>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" id="pwd1"  autocomplete="new-password" formControlName="password">
+        <div class="invalid-feedback">Please enter a password</div>
+      </div>
+      <!--<div class="form-check small">-->
+        <!--<label class="form-check-label">-->
+          <!--<input type="checkbox" class="form-check-input"> <span>Remember me on this computer</span>-->
+        <!--</label>-->
+      <!--</div>-->
+      <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin" [disabled]="!form.valid">Войти</button>
+    </form>
+  </div>
+  <!--/card-body-->
+</div>

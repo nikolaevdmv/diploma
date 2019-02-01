@@ -1,0 +1,12 @@
+.center {
+  text-align: center;
+}
+.dialog-content {
+  height: 150px;
+  text-align: center;
+}
+
+.check-box {
+  display: inline-block;
+  margin: 10px;
+}

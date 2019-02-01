@@ -1,0 +1,30 @@
+.first-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.first-row mat-form-field {
+  margin: 20px;
+}
+
+.first-row > * {
+  width: 100%;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.signun-form {
+  width: 50%;
+  margin: auto;
+}
+
+.my-btn {
+  text-align: center;
+}

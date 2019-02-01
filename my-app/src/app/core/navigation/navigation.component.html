@@ -1,0 +1,27 @@
+
+<div class="">
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['/']">Добро пожаловать<p class="d-inline" *ngIf="getUsername()">{{", " + getUsername()}}</p></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <div class="inline-div" *ngIf="!isLoggedIn()">
+            <!--<li class="nav-item"><a [routerLink]="['/signin']" class="nav-link">Войти</a></li>-->
+            <li class="nav-item"><a (click)="initLoginModal()" class="nav-link">Войти</a></li>
+            <li class="nav-item"><a (click)="initRegisterModal()" class="nav-link">Регистрация</a></li>
+          </div>
+          <div class="inline-div" *ngIf="isLoggedIn()">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/']" (click)="logout()">Выход</a>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+

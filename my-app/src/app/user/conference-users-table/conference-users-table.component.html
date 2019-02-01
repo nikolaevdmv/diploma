@@ -1,0 +1,52 @@
+<div class="text-center">
+  <table *ngIf="page" class="table table-hover">
+    <thead>
+    <tr>
+      <th>Имя пользователя</th>
+      <th>Email</th>
+      <th>Роли</th>
+      <th *ngIf="isAdmin()">Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let u of page.content">
+      <td class="text-center">{{u.firstname}} {{u.lastname}}</td>
+      <td class="text-center">{{u.email}}</td>
+      <td class="text-center">
+        <span class="badge"
+              [class.badge-secondary]="role===conferenceRoleService.getSubmitterNumber()"
+              [class.badge-primary]="role===conferenceRoleService.getReviewerNumber()"
+              [class.badge-success]="role===conferenceRoleService.getCreatorNumber()"
+              [class.badge-danger]="role===conferenceRoleService.getAdminNumber()"
+              *ngFor="let role of u.roles">{{conferenceRoleService.getRole(role)}}</span>
+      </td>
+      <td class="text-center" *ngIf="isAdmin()">
+        <button type="button" class="btn btn-sm btn-info" (click)="initRoleModal(u)" data-toggle="modal"
+                data-target="#modal">Изменить роли
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<!-- PAGEABLE BUTTONS -->
+<div class="row">
+  <div class="col-12">
+    <span class="float-right">
+      <button role="button"
+              class="btn btn-sm btn-default"
+              (click)="pageChange(page?.number - 1)"
+              [disabled]="page?.first">
+        <i class="fa fa-step-backward"></i>
+      </button>
+
+      <span class="text-center">{{ page?.number + 1 }} of {{ page?.totalPages }}</span>
+      <button role="button"
+              class="btn btn-sm btn-default"
+              (click)="pageChange(page?.number + 1)"
+              [disabled]="page?.last">
+        <i class="fa fa-step-forward"></i>
+      </button>
+    </span>
+  </div>
+</div>

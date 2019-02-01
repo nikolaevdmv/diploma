@@ -1,0 +1,29 @@
+<div>
+  <div class="modal-dialog modal-dialog-centered text-justify" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Изменение ролей</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="submit(  )">
+        <div class="modal-body">
+          <h5>Роли пользователя {{user.firstname}} {{user.lastname}}:</h5>
+          <div class="form-check" *ngFor="let r of conferenceRoleService.getChangeableRoles()">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" name="role"
+                     [value]="conferenceRoleService.getRoleNumber(r)" (change)="onRoleChange($event)"
+                     [checked]="selectedRoles.has(conferenceRoleService.getRoleNumber(r))" formControlName="role">
+              {{r}}
+            </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Закрыть</button>
+          <button type="submit" class="btn btn-primary">Сохранить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+table th {
+  text-align: center;
+}
+/*.id-col {*/
+  /*width: 1%;*/
+/*}*/
+
+/*.author-col {*/
+  /*width: 35%;*/
+/*}*/
+
+/*.title-col {*/
+  /*width: 74%;*/
+/*}*/
+.id-col {
+  flex: 0 0 5%
+}
+
+.author-col {
+  flex: 0 0 35%;
+}
+
+.title-col {
+  flex: 0 0 60%;
+}
+table {
+  width: 80%;
+  margin: 20px auto;
+}
+.wrapper {
+  margin: 10px;
+}
+.clickable {
+  cursor: pointer;
+}
+
+
+.mat-table {
+  overflow: auto;
+  /*max-height: 500px;*/
+  min-height: 300px;
+  width: 1200px;
+  margin: auto;
+}
+.mat-paginator {
+  margin: auto;
+  width: 1000px;
+}
+.highlight:hover {
+  cursor: pointer;
+  background: lightblue; /* green */
+}
+.id-col {
+  flex: 0 0 5%
+}
+
+.author-col {
+  flex: 0 0 35%;
+}
+
+.title-col {
+  flex: 0 0 60%;
+}
+
+.dropdown-toggle:after{
+  display: none;
+}

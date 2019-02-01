@@ -1,0 +1,33 @@
+table {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.info-table td {
+  width: 50%;
+}
+
+table th {
+  text-align: center;
+}
+
+.submission-detail {
+  margin: 10px;
+}
+
+a:not([href]) {
+  text-decoration: underline;
+  color: #03a9f4;
+  cursor: pointer;
+}
+
+.form-control[disabled] {
+  background-color: inherit;
+  border: none;
+  resize: none;
+}
+
+select:disabled {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}

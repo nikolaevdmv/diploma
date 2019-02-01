@@ -1,0 +1,41 @@
+table {
+  /*display: inline-table;*/
+  /*width: 80%;*/
+  /*margin: auto;*/
+  /*width: 80%;*/
+  /*margin: 20px auto;*/
+}
+
+.submission-table td {
+  width: 50%;
+}
+
+table th {
+  text-align: center;
+}
+
+.submission-detail {
+  margin: 10px;
+  /*margin: 0 auto;*/
+  /*width: 90%;*/
+}
+
+.on-review-button {
+  /*float:right;*/
+  /*vertical-align: middle;*/
+}
+
+a:not([href]) {
+  text-decoration: underline;
+  color: #03a9f4;
+  cursor: pointer;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.custom-file-label:after {
+  content: 'Выберите файл';
+}
+

@@ -1,0 +1,21 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.request-form {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.my-btn {
+  text-align: center;
+}
+
+form {
+  font-size: 18px;
+}

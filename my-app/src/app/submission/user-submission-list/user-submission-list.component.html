@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div>
+    <h4 class="text-center">Список моих докладов</h4>
+    <table class="table table-bordered table-hover submission-table">
+      <thead>
+      <tr>
+        <th class="id-col">#</th>
+        <th class="author-col">Авторы</th>
+        <th class="title-col">Название</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let submission of submissions">
+      <tr class="clickable" [routerLink]="['/dashboard/conferences/', conference_id, 'submissions', submission.id]">
+        <td>{{submissions.indexOf(submission) + 1}}</td>
+        <td class="text-center">{{submission.author}}</td>
+        <td class="text-center">{{submission.title}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="text-center">
+    <a [routerLink]="['/dashboard/conferences/',conference_id,'new-submission']" class=" btn btn-primary" role="button"
+       aria-pressed="true">Загрузить доклад</a>
+  </div>
+</div>
+

@@ -1,0 +1,48 @@
+<h3 class="text-center">Список конференций</h3>
+
+<div class="container">
+  <div class="btn-group float-right">
+    <button
+      class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fa fa-cog"></i>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right p-0" style="width:300px" (click)="$event.stopPropagation()">
+      <div class="row">
+        <div class="col-12">
+          <div class="card ">
+            <div class="card-body">
+              <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+
+                <div class="row">
+                  <div class="col-12">
+
+                    <h5 class="card-title">Статус конференций</h5>
+                    <div class="form-group">
+                      <div class="form-check" *ngFor="let status of this.conferenceStatusService.getDicplayableStatuses()">
+                        <input class="form-check-input" name="status" [value]="status" type="radio" id="{{status}}"
+                               formControlName="status">
+                        <label class="form-check-label" for="{{status}}">{{status}}</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-sm btn-success">Применить</button>
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <app-conference-list-table [page]="page" (onPageChange)="pageChange($event)"></app-conference-list-table>
+</div>
+

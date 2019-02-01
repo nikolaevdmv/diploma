@@ -1,0 +1,36 @@
+<div  *ngIf="statistic">
+  <div class="card mb-3">
+    <!--<div class="" *ngIf="conference">-->
+    <table class="table ">
+      <thead>
+      <tr>
+        <th colspan="2">Статистика конференции</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Количество докладов</td>
+        <td>{{this.statistic.submissionAmount}}</td>
+      </tr>
+      <tr>
+        <td>Количество принятых докладов</td>
+        <td>{{this.statistic.submissionAcceptedAmount}}</td>
+      </tr>
+      <tr>
+        <td>Количество рецензий</td>
+        <td>{{this.statistic.reviewAmount}}</td>
+      </tr>
+      <tr>
+        <td>Количество документов(файлов)</td>
+        <td>{{this.statistic.documentAmount}}</td>
+      </tr>
+      <tr>
+        <td>Количество участников</td>
+        <td>{{this.statistic.participantAmount}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<button type="button" class="btn btn-info" (click)="goBack()">Назад</button>
+

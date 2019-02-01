@@ -1,0 +1,90 @@
+.nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.nav-link:hover {
+  cursor: pointer;
+  color: inherit;
+}
+
+/*li a {*/
+  /*padding-left: 16px;*/
+  /*margin: 6px;*/
+  /*width: fit-content;*/
+/*}*/
+
+.icon {
+  margin-right: 5px;
+}
+
+.list-group-item {
+  padding-left: 32px;
+  border: none;
+}
+
+.list-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 15px;
+}
+.list-link:hover {
+  color: #3f51b5;
+}
+
+/*.conference-bar {*/
+  /*margin: 20px 20px;*/
+/*}*/
+
+.conference-title {
+  margin: 20px;
+  display: inline-block;
+  width: 70%;
+  color: #ddd;
+}
+
+.btn-reload {
+  float: right;
+}
+/*#203a75*/
+
+
+
+.sidebar-nav {
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+
+  display: block;
+  text-decoration: none;
+  color: #ddd;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #ddd;
+}
+
+.sidebar-nav li:hover {
+  background: #16A085;
+  cursor: pointer;
+}
+
+
+
+.my-collapse-link[data-toggle].collapsed:after {
+  content: "▾";
+}
+.my-collapse-link[data-toggle]:not(.collapsed):after {
+  content: "▴";
+}
+
+
+.my-collapse-div {
+  background: #323535;
+}

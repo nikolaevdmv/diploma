@@ -1,0 +1,90 @@
+<!--<form class="p-5 border w-75 mx-auto" style="background-color: #e6e6e6" [formGroup]="form" novalidate (ngSubmit)="submit(form.value)">-->
+  <!--<div class="form-group">-->
+    <!--<label>Как вас зовут</label>-->
+    <!--<div class="row">-->
+      <!--<div class="col-6">-->
+        <!--<input type="text" class="form-control mr-2" id="firstName" placeholder="Иван" formControlName="firstname">-->
+      <!--</div>-->
+      <!--<div class="col-6">-->
+        <!--<input type="text" class="form-control mr-2" id="lastName" placeholder="Иванов" formControlName="lastname">-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<hr>-->
+  <!--<div class="form-group">-->
+    <!--<label for="email">Адрес эл. почты</label>-->
+    <!--<input type="email" class="form-control" id="email" placeholder="example@example.com" formControlName="email" autocomplete="off">-->
+  <!--</div>-->
+  <!--<div class="form-group">-->
+    <!--<label for="password">Придумайте пароль</label>-->
+    <!--<input type="password" class="form-control" id="password" formControlName="password">-->
+  <!--</div>-->
+  <!--<div class="form-group">-->
+    <!--<label for="passwordRetype">Подтвердите пароль</label>-->
+    <!--<input type="password" class="form-control" id="passwordRetype" formControlName="passwordRetype">-->
+  <!--</div>-->
+  <!--<div class="text-center">-->
+    <!--<button type="submit" class="btn btn-primary" [disabled]="!form.valid">Создать новый аккаунт</button>-->
+  <!--</div>-->
+<!--</form>-->
+
+<!--<div class="signun-form">-->
+  <!--<form [formGroup]="form" (ngSubmit)="submit(form.value)">-->
+    <!--<div class="first-row">-->
+      <!--<mat-form-field>-->
+        <!--<input matInput placeholder="Имя" formControlName="firstname" type="text">-->
+      <!--</mat-form-field>-->
+      <!--<mat-form-field>-->
+        <!--<input matInput placeholder="Фамилия" formControlName="lastname" type="text">-->
+      <!--</mat-form-field>-->
+    <!--</div>-->
+    <!--<div class="example-container">-->
+      <!--<mat-form-field>-->
+        <!--<input matInput placeholder="E-mail" formControlName="email" type="email">-->
+      <!--</mat-form-field>-->
+      <!--<mat-form-field>-->
+        <!--<input matInput placeholder="Пароль" formControlName="password" type="password">-->
+      <!--</mat-form-field>-->
+      <!--<mat-form-field>-->
+        <!--<input matInput placeholder="Повторите пароль" formControlName="passwordRetype" type="password">-->
+      <!--</mat-form-field>-->
+    <!--</div>-->
+    <!--<div class="my-btn">-->
+      <!--<button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Создать новый аккаунт</button>-->
+    <!--</div>-->
+  <!--</form>-->
+<!--</div>-->
+
+
+<div class="card card-outline-secondary">
+  <div class="card-header">
+    <h3 class="mb-0">Регистрация</h3>
+  </div>
+  <div class="card-body">
+    <form class="form" role="form" autocomplete="off" [formGroup]="form" (ngSubmit)="submit(form.value)" novalidate>
+      <div class="form-group">
+        <label for="inputFirstName">Имя</label>
+        <input type="text" class="form-control" id="inputFirstName" placeholder="Имя" formControlName="firstname">
+      </div>
+      <div class="form-group">
+        <label for="inputLastName">Фамилия</label>
+        <input type="text" class="form-control" id="inputLastName" placeholder="Фамилия" formControlName="lastname">
+      </div>
+      <div class="form-group">
+        <label for="inputEmail3">Email</label>
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" formControlName="email">
+      </div>
+      <div class="form-group">
+        <label for="inputPassword3">Пароль</label>
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Пароль" formControlName="password" >
+      </div>
+      <div class="form-group">
+        <label for="inputVerify3">Подтвердите</label>
+        <input type="password" class="form-control" id="inputVerify3" placeholder="Пароль (еще раз)" formControlName="passwordRetype">
+      </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!form.valid">Зарегистрироваться</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<!--<nav class="navbar bg-light">-->
+<!--<nav class="navbar">-->
+<!--<div class="conf-list">-->
+<!--<app-conf-list></app-conf-list>-->
+<!--</div>-->
+<!--<div>-->
+<!--<hr>-->
+<!--<a class="nav-link" [routerLink]="['conference-requests']">Мои запросы</a>-->
+<!--<a class="nav-link" [routerLink]="['new-conference-request']">Создание конференции</a>-->
+<!--</div>-->
+<!--</nav>-->
+
+
+<!--<div class="conf-list">-->
+  <!--<app-conf-list></app-conf-list>-->
+<!--</div>-->
+<!--<div>-->
+  <!--<mat-nav-list>-->
+
+    <!--<a mat-list-item class="nav-link" [routerLink]="['conference-requests']">Мои запросы</a>-->
+    <!--<a mat-list-item class="nav-link" [routerLink]="['new-conference-request']">Создание конференции</a>-->
+  <!--</mat-nav-list>-->
+
+
+<!--</div>-->
+
+<div id="sidebar-wrapper">
+  <app-conf-list></app-conf-list>
+  <ul class="sidebar-nav">
+    <li><a [routerLink]="['conference-requests']">Мои запросы</a></li>
+    <li><a [routerLink]="['new-conference-request']">Создание конференции</a></li>
+  </ul>
+</div>

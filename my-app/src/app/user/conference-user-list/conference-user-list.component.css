@@ -1,0 +1,53 @@
+.center {
+  text-align: center;
+}
+
+.user-table {
+  margin: 10px;
+}
+
+.row-highlight:hover {
+  /*cursor: pointer;*/
+  background: lightblue;
+}
+
+.id-col {
+  flex: 0 0 5%
+}
+
+.username-col {
+  flex: 0 0 60%;
+}
+
+.role-col {
+  flex: 0 0 25%;
+}
+
+mat-chip-list {
+  display: inline-block;
+}
+
+mat-chip {
+  text-align: center;
+}
+
+.actions-col {
+  flex: 0 0 10%;
+}
+
+.mat-table {
+  overflow: auto;
+  /*max-height: 500px;*/
+  min-height: 300px;
+  width: 1200px;
+  margin: auto;
+}
+
+.mat-paginator {
+  margin: auto;
+  width: 1000px;
+}
+
+.dropdown-toggle:after{
+  display: none;
+}

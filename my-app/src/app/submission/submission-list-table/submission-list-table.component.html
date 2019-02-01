@@ -1,0 +1,38 @@
+<div>
+  <table *ngIf="page" class="table table-hover">
+    <thead>
+    <tr>
+      <th class="title-col">Название</th>
+      <th class="author-col">Автор</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let s of page.content" [class.clickable]="isClickable(s)"
+        [routerLink]="isClickable(s) ? ['/submissions', s.id] : []">
+      <td class="text-center">{{s.title}}</td>
+      <td class="text-center">{{s.author.firstname}} {{s.author.lastname}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<!-- PAGEABLE BUTTONS -->
+<div class="row">
+  <div class="col-12">
+    <span class="float-right">
+      <button role="button"
+              class="btn btn-sm btn-default"
+              (click)="pageChange(page?.number - 1)"
+              [disabled]="page?.first">
+        <i class="fa fa-step-backward"></i>
+      </button>
+
+      <span class="text-center">{{ page?.number + 1 }} of {{ page?.totalPages }}</span>
+      <button role="button"
+              class="btn btn-sm btn-default"
+              (click)="pageChange(page?.number + 1)"
+              [disabled]="page?.last">
+        <i class="fa fa-step-forward"></i>
+      </button>
+    </span>
+  </div>
+</div>

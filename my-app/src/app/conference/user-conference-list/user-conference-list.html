@@ -1,0 +1,30 @@
+
+
+<div *ngIf="conferences">
+  <div class="conference-bar">
+    <h5 class="conference-title">Мои конференции</h5>
+    <button type="button" class="btn btn-secondary  btn-sm float-right mt-3" (click)="reload()"><i class="fa fa-redo"></i>
+    </button>
+    <ul class="sidebar-nav" *ngIf="!loading">
+      <div *ngFor="let conference of conferences">
+      <li (click)="hideme[conference.id]=!hideme[conference.id]">
+        <a class="my-collapse-link collapsed" href="#{{conference.id}}" data-target="#{{conference.id}}" data-toggle="collapse">
+          {{conference.title}}</a>
+      </li>
+      <div class="collapse my-collapse-div" id="{{conference.id}}" aria-expanded="false">
+        <ul class="sidebar-nav">
+          <li><a [routerLink]="['conferences',conference.id]">Детали</a></li>
+          <li><a [routerLink]="['conferences',conference.id,'submissions']">Доклады</a></li>
+          <li><a [routerLink]="['conferences',conference.id,'users']">Участники</a></li>
+          <li><a [routerLink]="['conferences',conference.id,'statistic']">Статистика</a></li>
+        </ul>
+      </div>
+      </div>
+    </ul>
+
+    <div class="text-center" *ngIf="loading">
+      <i class="fa fa-spinner fa-spin" style="font-size:150px; color: white"></i>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,38 @@
+.inline-div {
+  display: inherit;
+}
+/*.example-fill-remaining-space {*/
+  /*!* This fills the remaining space, by using flexbox.*/
+     /*Every toolbar row uses a flexbox row layout. *!*/
+  /*flex: 1 1 auto;*/
+/*}*/
+/*.top-link-right:hover {*/
+  /*color: inherit;*/
+  /*text-decoration: none;*/
+/*}*/
+/*.top-link-right {*/
+  /*display: block;*/
+  /*float:left;*/
+/*}*/
+/*.top-link-left:hover {*/
+  /*color: inherit;*/
+  /*text-decoration: none;*/
+/*}*/
+/*. button-row {*/
+  /*margin: 0;*/
+/*}*/
+
+.navbar {
+  background: whitesmoke ;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+}
+
+a {
+  color: #696363 !important;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #2d2a2a !important;
+}

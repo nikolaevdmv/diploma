@@ -1,0 +1,18 @@
+<div class="card bg-light" style="max-width: 30rem; margin: auto">
+  <div class="card-header">Новый комментарий</div>
+  <div class="card-body">
+    <form [formGroup]="form" novalidate (ngSubmit)="submit(form.value)">
+      <div class="form-group">
+        <label for="status">Статус</label>
+        <select class="form-control" id="status" formControlName="status">
+          <option *ngFor="let status of statuses" [value]="status">{{status}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="content">Содержание</label>
+        <textarea class="form-control" id="content" rows="3" formControlName="comment"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success btn-lg float-right">Отправить</button>
+    </form>
+  </div>
+</div>

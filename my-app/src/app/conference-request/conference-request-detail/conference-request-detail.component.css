@@ -1,0 +1,39 @@
+.request-detail {
+  margin: 10px;
+}
+
+.info-table td {
+  width: 50%;
+}
+table th {
+  text-align: center;
+}
+button {
+  /*width: 120px;*/
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.request-form {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.my-btn {
+  text-align: center;
+}
+
+.mat-input-element:disabled {
+  color: rgba(0,0,0,.87);
+}
+
+form {
+  font-size: 18px;
+}

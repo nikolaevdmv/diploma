@@ -1,0 +1,24 @@
+<div class="card card-outline-secondary" id="signin-modal">
+  <div class="card-header">
+    <h3 class="mb-0 d-inline">Вход в систему</h3>
+    <button type="button" class="close float-right d-inline" (click)="close()">&times;</button>
+  </div>
+  <div class="card-body">
+    <div class="alert alert-danger mb-0" *ngIf="this.error?.error">
+      <p>{{this.error.error}}</p>
+    </div>
+    <form class="form" role="form" id="loginForm" [formGroup]="form" novalidate (ngSubmit)="submit(form.value)">
+      <div class="form-group">
+        <label for="uname1">Email</label>
+        <input type="text" class="form-control" name="uname1" id="uname1" formControlName="username">
+        <div class="invalid-feedback">Please enter your username or email</div>
+      </div>
+      <div class="form-group">
+        <label>Пароль</label>
+        <input type="password" class="form-control" id="pwd1"  formControlName="password">
+        <div class="invalid-feedback">Please enter a password</div>
+      </div>
+      <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin" [disabled]="!form.valid">Войти</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<!-- <configuration scan="true" scanPeriod="30 seconds"> -->
+<configuration>
+
+<!-- 	<property name="LOG_HOME" value -->
+
+	<!-- Console Appender (Settings)  -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- Date, Thread, Level, Logger name, Message -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!--info-->
+	<logger name="com.nikolaev" level="debug" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+	<!--info-->
+	<logger name="org.springframework" level="info" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+	<!--debug-->
+	<root level="error">
+		<appender-ref ref="STDOUT"/>
+	</root>
+
+</configuration>

@@ -1,0 +1,12 @@
+<div class="card bg-light mb-3 ml-auto mr-auto" style="max-width: 30rem;">
+  <div class="card-header"
+       [class.bg-success]="this.statuses.get(this.comment.status) == 'Принять'"
+       [class.bg-danger]="this.statuses.get(this.comment.status) == 'Отклонить'"
+  >
+    {{this.statuses.get(this.comment.status)}}</div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text">{{this.comment.content}}</p>
+    <p class="card-text float-right"><small class="text-muted">{{this.comment.date | date: 'MMM d, HH:mm'}}</small></p>
+  </div>
+</div>

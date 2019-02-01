@@ -1,0 +1,68 @@
+<div class="text-center container">
+  <h4 class="text-center">Доклады</h4>
+
+
+  <div class="btn-group float-right">
+    <button
+      class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fa fa-cog"></i>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right p-0" style="width:300px" (click)="$event.stopPropagation()">
+      <div class="row">
+        <div class="col-12">
+          <div class="card ">
+            <div class="card-body">
+              <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+
+                <div class="row">
+                  <div class="col-12">
+
+                    <h5 class="card-title">Тип докладов</h5>
+                    <div class="form-group">
+                      <div class="form-check" *ngFor="let subType of getDisplayableSubmissionType()">
+                        <input class="form-check-input" name="type" [value]="subType" type="radio" id="{{subType}}"
+                               formControlName="type">
+                        <label class="form-check-label" for="{{subType}}">{{subType}}</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="status">Статус</label>
+                      <select class="form-control" id="status" formControlName="status">
+                        <option value="" selected>Выберите статус</option>
+                        <option *ngFor="let status of submissionStatusService.getDicplayableStatuses()"
+                                [value]="status">{{status}}
+                        </option>
+                      </select>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-sm btn-success">Применить</button>
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container" *ngIf="!loading">
+    <app-submission-list-table [page]="page" [userRoles]="userRoles"
+                               (onPageChange)="pageChange($event)"></app-submission-list-table>
+  </div>
+
+  <div class="text-center">
+    <a [routerLink]="['/conferences/',conferenceId,'new-submission']" class=" btn btn-primary" role="button"
+       aria-pressed="true">Загрузить доклад</a>
+  </div>
+</div>
+

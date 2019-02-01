@@ -1,0 +1,10 @@
+table {
+  width: 80%;
+  margin: 20px auto;
+}
+table th {
+  text-align: center;
+}
+table td:first-child {
+  width: 1%;
+}
